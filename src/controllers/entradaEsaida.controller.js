@@ -11,7 +11,7 @@ async function createentradaEsaida (req, res)  {
   } 
     try {
       db.collection('entradaEsaida').find({nome, email}).toArray().then(i =>{(i)
-      res.send(i.slice(-5))
+      res.send(i.reverse())
     });
     } catch (error) {
       res.status(500).send(error.message)
